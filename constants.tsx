@@ -1,5 +1,71 @@
 
-import { Module, Lab } from './types';
+import { Module, Lab, CareerTrack, TrackCategory } from './types';
+
+export const TECHSKYLINE_INFO = {
+  est: '2024',
+  version: 'v2026',
+  director: 'Abhinav Joseph',
+  contacts: {
+    whatsapp: '+91 81062 43684',
+    usa: '+1 (408) 614-0468',
+    email: 'techskylineitsolutions20204@gmail.com'
+  },
+  activeTracks: 20,
+  locations: ['Silicon Valley, USA', 'Hyderabad, India']
+};
+
+export const MASTERY_MATRIX: TrackCategory[] = [
+  {
+    title: 'Agentic & Gen AI',
+    demand: 'Critical',
+    icon: 'Sparkles',
+    items: ['Agentic AI Workflows', 'Generative AI Engineering', 'Multi-Agent Systems', 'Neural Orchestration']
+  },
+  {
+    title: 'SAP S/4HANA Ecosystem',
+    demand: 'High',
+    icon: 'Layers',
+    items: ['SAP H/4 HANA', 'SAP Ariba Procurement', 'SAP IBP & OBP', 'Enterprise Workflows']
+  },
+  {
+    title: 'Oracle & Project Ctrl',
+    demand: 'Global',
+    icon: 'Target',
+    items: ['Oracle Primavera Unifier', 'Oracle P6 Professional', 'Workday HCM', 'Resource Mgmt']
+  },
+  {
+    title: 'Infrastructure & Security',
+    demand: 'High',
+    icon: 'Shield',
+    items: ['AWS & Azure DevOps', 'Google Cloud Security', 'Cyber Security Ops', 'Edge 5G']
+  },
+  {
+    title: 'Automation & Robotics',
+    demand: 'Extreme',
+    icon: 'Cpu',
+    items: ['RPA Workflows', 'Industrial Robotics', 'IOT Integration', 'Neural Control']
+  },
+  {
+    title: 'Strategic Analytics',
+    demand: 'Critical',
+    icon: 'BarChart',
+    items: ['Power BI Analytics', 'Tableau Reporting', 'Scrum Master', 'Product Mgmt']
+  }
+];
+
+export const TRACK_DETAILS = {
+  'AI & Data Intelligence': ['AI with Data Science', 'Foundation of AI', 'AI Automation', 'Python for AI', 'Neural Networks', 'Predictive Modeling'],
+  'Enterprise ERP & Cloud': ['SAP S/4HANA', 'SAP Ariba', 'SAP IBP & OBP', 'Workday HCM', 'AWS Cloud Architecture', 'Azure DevOps'],
+  'Oracle & Analytics': ['Oracle Primavera Unifier', 'Oracle P6 Professional', 'Tableau Analytics', 'Power BI Reporting', 'Strategic SQL', 'Big Data Hub'],
+  'Emerging Tech & Security': ['IOT & Edge 5G', 'RPA & Robotics', 'Google Cloud Security', 'Cyber Security Ops', 'Scrum Master', 'Product Management']
+};
+
+export const TRACK_RECOMMENDATIONS: Record<string, string[]> = {
+  'Data Analyst': ['data-ai', 'ai-basics'],
+  'AI Engineer': ['ai-agents', 'prompt-engineering'],
+  'Prompt Specialist': ['prompt-engineering', 'ai-basics'],
+  'SAP Specialist': ['use-cases']
+};
 
 export const MODULES: Module[] = [
   {
@@ -8,6 +74,7 @@ export const MODULES: Module[] = [
     order: 1,
     description: 'Understanding the fundamentals of Generative AI and LLMs.',
     skills: ['GenAI Fundamentals', 'LLM Architecture'],
+    credits: 1.0,
     content: `
       ## What is Generative AI?
       Generative AI refers to a category of artificial intelligence that can create new content, such as text, images, audio, and video. Unlike traditional AI that analyzes existing data, GenAI uses deep learning models to generate original outputs based on training data patterns.
@@ -16,69 +83,6 @@ export const MODULES: Module[] = [
       - **Large Language Models (LLMs):** AI trained on massive text datasets.
       - **Neural Networks:** The underlying architecture mimicking human brain neurons.
       - **Training vs Inference:** Learning from data vs. making predictions.
-    `
-  },
-  {
-    id: 'prompt-engineering',
-    title: 'Module 2: Prompt Engineering',
-    order: 2,
-    description: 'Mastering the art of instruction design for AI models.',
-    skills: ['Prompt Design', 'Context Management'],
-    content: `
-      ## The Core of Prompting
-      Prompt Engineering is the practice of designing instructions that guide AI models to produce accurate, useful outputs.
-
-      ### Components of a Perfect Prompt:
-      1. **Role:** Who is the AI? (e.g., "You are an AI trainer")
-      2. **Task:** What should it do? (e.g., "Explain Quantum Physics")
-      3. **Context:** Background info.
-      4. **Constraints:** Length, tone, format.
-    `
-  },
-  {
-    id: 'ai-agents',
-    title: 'Module 3: AI Agents',
-    order: 3,
-    description: 'Building autonomous agents that can use tools.',
-    skills: ['Agentic Logic', 'Tool Integration'],
-    content: `
-      ## Autonomous Agents
-      An AI Agent is more than just a chatbot. It is a system that can perceive its environment, reason, and take actions to achieve goals.
-
-      ### Capabilities:
-      - **Tool Use:** Searching the web, calculating math, or running code.
-      - **Memory:** Recalling past interactions to inform current decisions.
-      - **Planning:** Breaking complex tasks into smaller, executable steps.
-    `
-  },
-  {
-    id: 'data-ai',
-    title: 'Module 4: Data & AI',
-    order: 4,
-    description: 'Analyzing datasets and generating insights with AI.',
-    skills: ['Data Literacy', 'Insight Extraction'],
-    content: `
-      ## AI-Driven Data Analysis
-      Modern AI can process CSVs, JSONs, and unstructured text to find correlations humans might miss.
-
-      ### Workflow:
-      - Clean messy data using AI instructions.
-      - Visualize trends via Python code generation.
-      - Summarize massive spreadsheets into executive bullet points.
-    `
-  },
-  {
-    id: 'use-cases',
-    title: 'Module 5: Industry Use-Cases',
-    order: 5,
-    description: 'Applying AI to solve real-world business problems.',
-    skills: ['Enterprise Strategy', 'Ethics & Compliance'],
-    content: `
-      ## Enterprise AI
-      How industries are transforming:
-      - **Healthcare:** Diagnostic assistance and record summarization.
-      - **Finance:** Fraud detection and market sentiment analysis.
-      - **Legal:** Contract review and precedent research.
     `
   }
 ];
@@ -94,18 +98,6 @@ export const LABS: Lab[] = [
       'Change the audience to "working professionals"',
       'Add output in bullet points',
       'Limit output to 150 words'
-    ]
-  },
-  {
-    id: 'lab-agent',
-    title: 'AI Agent Design',
-    overview: 'Design an agent with a specific role and set of constraints to help users solve problems.',
-    systemPrompt: 'You are a Career Guidance Agent.',
-    initialPrompt: 'Recommend a free AI learning path for fresh graduates.\nConstraints:\n- Only free tools\n- No paid certifications',
-    challenges: [
-      'Make the output a step-by-step roadmap',
-      'Add a section for "Top 3 LinkedIn Skills" to add',
-      'Assume the user has zero coding background'
     ]
   }
 ];
