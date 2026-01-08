@@ -1,0 +1,8 @@
+{
+  "name": "TechSkyline AI Platform",
+  "description": "An enterprise-grade AI learning platform featuring interactive modules, prompt engineering labs powered by Gemini, and internship track management.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}
