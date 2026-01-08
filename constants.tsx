@@ -1,5 +1,4 @@
 
-import React from 'react';
 import { Module, Lab } from './types';
 
 export const MODULES: Module[] = [
@@ -8,6 +7,7 @@ export const MODULES: Module[] = [
     title: 'Module 1: AI Basics',
     order: 1,
     description: 'Understanding the fundamentals of Generative AI and LLMs.',
+    skills: ['GenAI Fundamentals', 'LLM Architecture'],
     content: `
       ## What is Generative AI?
       Generative AI refers to a category of artificial intelligence that can create new content, such as text, images, audio, and video. Unlike traditional AI that analyzes existing data, GenAI uses deep learning models to generate original outputs based on training data patterns.
@@ -23,6 +23,7 @@ export const MODULES: Module[] = [
     title: 'Module 2: Prompt Engineering',
     order: 2,
     description: 'Mastering the art of instruction design for AI models.',
+    skills: ['Prompt Design', 'Context Management'],
     content: `
       ## The Core of Prompting
       Prompt Engineering is the practice of designing instructions that guide AI models to produce accurate, useful outputs.
@@ -39,6 +40,7 @@ export const MODULES: Module[] = [
     title: 'Module 3: AI Agents',
     order: 3,
     description: 'Building autonomous agents that can use tools.',
+    skills: ['Agentic Logic', 'Tool Integration'],
     content: `
       ## Autonomous Agents
       An AI Agent is more than just a chatbot. It is a system that can perceive its environment, reason, and take actions to achieve goals.
@@ -54,6 +56,7 @@ export const MODULES: Module[] = [
     title: 'Module 4: Data & AI',
     order: 4,
     description: 'Analyzing datasets and generating insights with AI.',
+    skills: ['Data Literacy', 'Insight Extraction'],
     content: `
       ## AI-Driven Data Analysis
       Modern AI can process CSVs, JSONs, and unstructured text to find correlations humans might miss.
@@ -69,6 +72,7 @@ export const MODULES: Module[] = [
     title: 'Module 5: Industry Use-Cases',
     order: 5,
     description: 'Applying AI to solve real-world business problems.',
+    skills: ['Enterprise Strategy', 'Ethics & Compliance'],
     content: `
       ## Enterprise AI
       How industries are transforming:
@@ -103,18 +107,6 @@ export const LABS: Lab[] = [
       'Add a section for "Top 3 LinkedIn Skills" to add',
       'Assume the user has zero coding background'
     ]
-  },
-  {
-    id: 'lab-data',
-    title: 'Data Analyst Lab',
-    overview: 'Practice role-playing as a data analyst AI. Provide insights and trends from hypothetical data.',
-    systemPrompt: 'You are a senior data analyst AI.',
-    initialPrompt: 'Analyze the following hypothetical dataset of a coffee shop:\nSales: $5000\nTop product: Latte\nPeak hours: 8am-10am\n\nProvide: Key insights, Trends, and 3 recommendations.',
-    challenges: [
-      'Suggest a new seasonal drink based on the peak hours',
-      'Analyze the impact of a 10% price increase',
-      'Propose a loyalty program structure'
-    ]
   }
 ];
 
@@ -123,4 +115,12 @@ export const INTERNSHIP_ROADMAP = [
   { week: 2, title: 'Agent Design Labs', status: 'Advanced' },
   { week: 3, title: 'Industry Use-Case Study', status: 'Specialization' },
   { week: 4, title: 'Final AI Project & Demo', status: 'Certification' }
+];
+
+export const CORE_SKILLS = [
+  'Prompt Design',
+  'Agentic Logic',
+  'Data Literacy',
+  'Enterprise Strategy',
+  'Ethics & Compliance'
 ];

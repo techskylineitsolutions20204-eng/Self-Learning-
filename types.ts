@@ -5,6 +5,7 @@ export interface Module {
   description: string;
   content: string;
   order: number;
+  skills: string[];
 }
 
 export interface Lab {
@@ -16,8 +17,21 @@ export interface Lab {
   challenges: string[];
 }
 
+export type UserRole = 'student' | 'professional' | 'enterprise';
+
 export interface UserProgress {
   completedModules: string[];
   completedLabs: string[];
   internshipStage: number;
+  xp: number;
+  level: number;
+  role: UserRole;
+  skills: Record<string, number>; // 0 to 100
+}
+
+export interface QuizQuestion {
+  question: string;
+  options: string[];
+  correctAnswer: number;
+  explanation: string;
 }
